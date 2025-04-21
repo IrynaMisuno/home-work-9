@@ -12,11 +12,14 @@
 
     --bg-accent: #EEEFF1;   
 }
-
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
 
 body{
     font-family: "Roboto", sans-serif;
     line-height: 1.64;
+
 }
 
 .container {
@@ -24,17 +27,17 @@ body{
     
 }
 
-
 .header {
     background-color: var(--bg-accent);
     padding-top: 79px;
+    padding-bottom: 20px;
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
-    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
+    z-index: 999;
 }
 
 
@@ -42,8 +45,6 @@ body{
     display: flex;
     list-style-type: none;
     gap: 50px;
-    margin: 0 0 20px 0;
-    padding: 0;
 
 
 }
@@ -98,7 +99,6 @@ body{
     text-decoration: none;
     letter-spacing: .1em;
     min-width: 225px;
-    box-sizing: border-box;
     justify-content: center;
     position: relative;
 
@@ -120,40 +120,62 @@ body{
     text-align: center;
     padding-top: 100px;
     padding-bottom: 100px;
-
+    
 }
 
 .text-section__title{
     font-size: 32px;
     font-weight: 500;
     margin: 0;
-    color: var(--text-secondary);
+    color: var(--text-primary);
 }
 
-.text-section__description:not(:last-child){
-margin-bottom: 50px;
+.text-section__description {
+    max-width: 540px;
+    color: var(--text-secondary);
 } 
+
+.mb50 {
+    margin-bottom: 50px;
+}
 
 .color-block{
     background-color: var(--color-accent);
-    color: (--text-accent);
     width: 100vw;    
 }
 
 .item-section{
-    display: flex;
-    justify-content: center;
-    box-sizing: border-box;
+    color: var(--text-accent);
     height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 100px calc(50vw - 555px);
+   
+}
 
+.item-section__group{
+    display: flex;
+    align-items: center;
+    width: 140px;
+
+    
+}
+
+.item-section h3:not(.h3-text){
+    font-weight: 500;
+}
+
+.h3-text{
+    font-weight: 400;
+    margin-top: -15px;
+    font-size: 16px;
 }
 
 .color-block__item{
-    width: 141px;
+    margin-right: 20px;
     height: 50px;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    margin-right: 49px;
+    width: 50px;
 }
 
 .footer{
@@ -163,17 +185,26 @@ margin-bottom: 50px;
     position: absolute;
 }
 
+.footer__content {
+    padding-left: calc(50vw - 555px);
+    padding-top: 50px;
+    padding-bottom: 40px;
+    margin: 0 auto;
+}
+
+
 .footer h3{
-    font-family:"Roboto", sans-serif;;
+    font-family:"Roboto", sans-serif;
     font-size: 21px;
     font-weight: 500;
-    margin-top: 50px;
-    padding: 0 calc(50vw - 555px);
+    margin-block-start: 0;
+    margin-block-end: 0;
+    
 }
 
 .footer p{
     font-size: 13px;
     font-weight: 400;
-    margin-bottom: 50px;
-    padding: 0 calc(50vw - 555px);
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
